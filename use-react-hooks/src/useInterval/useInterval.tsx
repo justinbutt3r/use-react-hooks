@@ -1,3 +1,1 @@
-export default function useInterval() {
-
-}
+export default function useInterval(): void {}
