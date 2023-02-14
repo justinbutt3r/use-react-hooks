@@ -1,39 +1,47 @@
 {
-  "name": "use-react-hooks",
-  "version": "1.1.0",
+  "name": "@justinbutt3r/use-react-hooks",
+  "version": "0.1.0",
   "description": "A starter for creating a new React hook",
   "author": {
     "name": "justinbutt3r",
-    "email": "hello@colbyfayock.com",
-    "url": "https://twitter.com/colbyfayock"
+    "url": "https://twitter.com/justinbutt3r"
   },
   "keywords": [
     "react",
     "hooks",
     "react-hooks"
   ],
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "jsnext:main": "dist/index.es.js",
   "scripts": {
-    "build": "babel src --out-dir .",
+    "build": "rollup -c && tsc -d --emitDeclarationOnly --noEmit false --declarationDir dist",
     "bump": "npm version",
     "example": "cd example && yarn install && yarn package",
     "prepublishOnly": "yarn build",
-    "watch": "nodemon --watch src --exec \"yarn build\""
+    "watch_old": "nodemon --watch src --ext \"ts,tsx\" --exec \"yarn build\"",
+    "watch": "rollup -c -w",
+    "test": "jest"
   },
   "license": "MIT",
-  "devDependencies": {},
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "24.0.1",
+    "@rollup/plugin-node-resolve": "15.0.1",
+    "@rollup/plugin-typescript": "11.0.0",
+    "@rollup/plugin-url": "8.0.1",
+    "rollup": "3.15.0",
+    "rollup-plugin-peer-deps-external": "2.2.4",
+    "ts-node": "^10.9.1"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/colbyfayock/use-react-hooks"
+    "url": "https://github.com/justinbutt3r/use-react-hooks"
   },
   "bugs": {
-    "url": "https://github.com/colbyfayock/use-react-hooks/issues"
+    "url": "https://github.com/justinbutt3r/use-react-hooks/issues"
   },
   "dependencies": {
-    "@babel/cli": "^7.14.8",
-    "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.15.0",
-    "@babel/preset-react": "^7.14.5",
     "nodemon": "^2.0.12"
   }
 }

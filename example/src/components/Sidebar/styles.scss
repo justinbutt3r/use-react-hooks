@@ -1,0 +1,14 @@
+@import "../../theme/index.scss";
+
+.sidebar {
+  width: 20vw;
+  max-width: 20rem;
+  padding: 1.25rem;
+  background: $onyx;
+  border-right: 1px solid $balticSea;
+  color: white;
+
+  & ul {
+    list-style: none;
+  }
+}

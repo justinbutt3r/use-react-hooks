@@ -1,0 +1,67 @@
+@import "./colors.scss";
+@import "./fonts.scss";
+@import "./breakpoints.scss";
+@import "./variables.scss";
+@import "./layout.scss";
+
+@mixin bp($screen) {
+  @media (min-width: $screen+"px") {
+    @content;
+  }
+}
+@mixin max-bp($screen) {
+  @media (max-width: $screen - 1 +"px") {
+    @content;
+  }
+}
+
+@mixin landscape {
+  @media (orientation: landscape) and (max-width: $medium - 1 +"px") {
+    @content;
+  }
+}
+
+*[class$="-inner"] {
+  max-width: 1280px;
+  padding: 0 1em;
+  margin: 0 auto;
+}
+
+// commons
+.spacing-container {
+  margin: 4.375em auto;
+
+  @include bp($medium) {
+    margin: 7.5em auto;
+  }
+
+  &.noTop {
+    margin-top: 0;
+  }
+
+  &.noBottom {
+    margin-bottom: 0;
+  }
+}
+
+.multicard-layout {
+  @include bp($large) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.tri-layout {
+  @extend .multicard-layout;
+  > div {
+    @include bp($large) {
+      width: $tri-width;
+    }
+
+    @include max-bp($large) {
+      &:not(:last-of-type) {
+        margin-bottom: 1.25em;
+      }
+    }
+  }
+}

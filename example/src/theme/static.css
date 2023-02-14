@@ -1,0 +1,5 @@
+/* presets for initial load */
+.header-bar{
+    opacity: 0;
+    height: 5em;
+}
