@@ -1,7 +1,19 @@
 ## Usage
 
 ```tsx
-import { useInterval } from "@justinbutt3r/use-react-hooks";
+import { useState } from "react";
+import { useInterval } from "../../../../../use-react-hooks";
 
-export function Demo() {}
+const Demo = () => {
+  const [count, setCount] = useState(0);
+  useInterval(() => setCount((c) => c + 1), 5000);
+
+  return (
+    <div>
+      <div>Times function was called - {count}</div>
+    </div>
+  );
+};
+
+export default Demo;
 ```

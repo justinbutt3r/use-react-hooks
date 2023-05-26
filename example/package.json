@@ -7,7 +7,7 @@
     "dev": "next",
     "develop": "yarn dev",
     "export": "next export",
-    "package": "yarn build && yarn export",
+    "package": "yarn build",
     "refresh": "yarn install --force",
     "start": "next start"
   },
@@ -15,12 +15,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@justinbutt3r/use-react-hooks": "0.1.1",
     "@mdx-js/loader": "^2.2.1",
     "@mdx-js/react": "^2.2.1",
     "@next/font": "13.1.6",
     "@next/mdx": "latest",
-    "next": "13.1.6",
+    "next": "13.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "rehype-highlight": "^6.0.0",

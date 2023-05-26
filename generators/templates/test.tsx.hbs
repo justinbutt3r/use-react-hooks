@@ -1,10 +1,8 @@
 import { renderHook } from "@testing-library/react-hooks";
 import {{name}} from "./{{name}}";
 
-const setup = () => renderHook(() => {{name}}());
-
-it("should be null", () => {
+it("should be undefined", () => {
   const { result } = renderHook(() => {{name}}());
 
-  expect(result.current).toBeNull();
+  expect(result.current).toBeUndefined();
 });

@@ -3,8 +3,14 @@
 ```typescript
 /**
  *
+ * Run a function repeatedly at a specified interval.
  *
+ * @param callback optional
+ * @param delay optional
  *
  **/
-declare function useInterval(): {};
+declare function useInterval(
+    callback: () => void,
+    delay?: number,
+): void;
 ```

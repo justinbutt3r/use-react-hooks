@@ -1,8 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import * as useReactHooks from "@justinbutt3r/use-react-hooks";
-
+import * as useReactHooks from "../../../../use-react-hooks";
 import "./styles.scss";
 
 const Sidebar = () => {
